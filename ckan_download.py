@@ -1,3 +1,4 @@
+#!/usr/bin/python
 import requests
 
 def download_and_save(filename):

@@ -1,3 +1,4 @@
+#!/usr/bin/python
 #encoding=utf-8
 
 def transform(input_filename, output_filename, regions_filename):
@@ -42,4 +43,8 @@ def transform(input_filename, output_filename, regions_filename):
 
 
 if __name__ == '__main__':
+<<<<<<< HEAD
   transform('koatuu.csv', 'koatuu_formatted.csv', 'koatuu_regions.csv')
+=======
+  transform('data/koatuu_122015.csv', 'data/koatuu_formatted.csv', 'data/koatuu_regions.csv')
+>>>>>>> Add script
