@@ -1,6 +1,8 @@
 #!/usr/bin/python
 from pyexcel_xls import get_data
 import csv
+import sys
+
 
 def convert_row(row):
   try:
@@ -12,8 +14,11 @@ def convert_row(row):
   return code, code_type, name
 
 if __name__ == '__main__':
-  filename = './data/koatuu/KOATUU_DBF_122015.xls'
-  output_filename = './data/koatuu_122015.csv'
+  
+  filename = sys.argv[1]
+#'./data/koatuu/KOATUU_DBF_122015.xls'
+  output_filename = sys.argv[2]
+#'./data/koatuu_122015.csv'
   print 'Converting xls to csv...'
   data = get_data(filename)
   koatuu = data['Sheet1']

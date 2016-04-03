@@ -1,19 +1,23 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 import requests
+import sys
+from distutils.dir_util import mkpath
+import os
 
-def download_and_save(filename):
-  registry = download()
+def download_and_save(url, filename):
+  registry = download(url)
+  mkpath(os.path.dirname(filename))
   with open(filename, 'w') as f:
     f.write(registry)
 
 
-def download():
-  url = 'http://www.ukrstat.gov.ua/klasf/st_kls/koatuu.zip'
+def download(url):
   r = requests.get(url)
   return r.content
 
 if __name__ == '__main__':
-  print 'Downloading...'
-  filename = './data/koatuu.zip'
-  download_and_save(filename)
-  print 'Downloded %s' % filename
+  url = sys.argv[1]
+  filename = sys.argv[2]
+  print 'Downloading %s...' % url
+  download_and_save(url, filename)
+  print 'Downloded to %s' % filename

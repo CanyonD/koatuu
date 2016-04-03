@@ -1,5 +1,7 @@
-#!/usr/bin/python
-#encoding=utf-8
+#!/usr/bin/env python
+# encoding=utf-8
+
+import sys
 
 def transform(input_filename, output_filename, regions_filename):
   of = open(output_filename, 'w')
@@ -43,8 +45,9 @@ def transform(input_filename, output_filename, regions_filename):
 
 
 if __name__ == '__main__':
-<<<<<<< HEAD
-  transform('koatuu.csv', 'koatuu_formatted.csv', 'koatuu_regions.csv')
-=======
-  transform('data/koatuu_122015.csv', 'data/koatuu_formatted.csv', 'data/koatuu_regions.csv')
->>>>>>> Add script
+  filename = sys.argv[1]
+  formatted = sys.argv[2]
+  regions = sys.argv[3]
+  print 'Transforming %s...' % filename
+  transform(filename, formatted, regions)
+  print 'Transformed to %s, %s' % (formatted, regions)
