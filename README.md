@@ -9,6 +9,12 @@
 
 ```
 
+або
+
+```
+docker-compose build && docker-compose up
+```
+
 ## Результати
 
 * [Результати обробки](http://data-gov-ua.org/dataset/koatuu)
