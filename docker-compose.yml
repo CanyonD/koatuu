@@ -1,0 +1,8 @@
+version: '2'
+services:
+  koatuu:
+    build: .
+    image: koatuu-sync
+    volumes:
+    - ./:/src
+    command: ./update_koatuu.sh

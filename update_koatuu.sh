@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env sh
 set -e
 rm -rf tmp/
 ./stat_download.py http://www.ukrstat.gov.ua/klasf/st_kls/koatuu.zip ./tmp/koatuu.zip
